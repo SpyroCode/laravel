@@ -37,7 +37,16 @@ Route::post('users/{id}', function ($id) {
     
 });
 
+//metodos http comunes
+
+//GET: Conseguir Datos o redursos
+//POST: Guadar datos o recursos->logia o hacer algo
+//PUT: Actualizar recursos o datos
+//DELETE: Eliminar datos o recursos
+
 
 //rutas de controlador de usuarios
 
+Route::post('/api/register','UserController@register');
+Route::post('/api/login','UserController@login');
 
