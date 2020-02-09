@@ -62,7 +62,11 @@
 
             <div class="card-body">
 
-                
+                @foreach ($blog as $element)
+
+                  {{$element["titulo"]}}
+                    
+                @endforeach
 
             </div>
 

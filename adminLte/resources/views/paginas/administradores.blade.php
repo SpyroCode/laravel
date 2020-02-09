@@ -63,7 +63,12 @@
 
             <div class="card-body">
 
-                
+              @foreach ($administradores as $element)
+
+                  {{$element}}
+                    
+                @endforeach
+
 
             </div>
 

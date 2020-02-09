@@ -63,7 +63,11 @@
 
             <div class="card-body">
 
-              
+              @foreach ($opiniones as $element)
+
+                  {{$element}}
+                    
+                @endforeach
             </div>
 
             <!-- /.card-body -->

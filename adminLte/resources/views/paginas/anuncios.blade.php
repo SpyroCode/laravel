@@ -63,7 +63,12 @@
 
             <div class="card-body">
 
-             
+              @foreach ($anuncios as $element)
+
+                  {{$element}}
+                    
+                @endforeach
+              
             </div>
 
             <!-- /.card-body -->

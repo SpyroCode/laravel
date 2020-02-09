@@ -63,7 +63,14 @@
 
             <div class="card-body">
 
-           
+              @foreach ($banner as $element)
+
+              {{$element}}
+                
+            @endforeach
+
+
+
 
             </div>
 
