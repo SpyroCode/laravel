@@ -37,6 +37,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 //rutas con todos los metodos
 Route::resource('/', 'BlogController');
+Route::resource('/blog', 'BlogController');
 Route::resource('/administradores','AdministradoresController');
 Route::resource('/categorias','CategoriasController');
 Route::resource('/articulos', 'ArticulosController');
