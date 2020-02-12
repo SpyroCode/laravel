@@ -123,11 +123,11 @@
                               </div>
 
                               <select name="icono_red" id="icono_red" class="form-control">
-                                 <option value="fab fa-facebook-f", #1475E0>Facebook</option>
-                                 <option value="fab fa-instagram", #B18768>Instagram</option>
-                                 <option value="fab fa-twitter", #00A6FF>twitter</option>
-                                 <option value="fab fa-youtube", #F95F62>youtube</option>
-                                 <option value="fab fa-snapchat-ghost", #FF9052>youtube</option>
+                                 <option value="fab fa-facebook-f, #1475E0">Facebook</option>
+                                 <option value="fab fa-instagram, #B18768">Instagram</option>
+                                 <option value="fab fa-twitter, #00A6FF">twitter</option>
+                                 <option value="fab fa-youtube, #F95F62">youtube</option>
+                                 <option value="fab fa-snapchat-ghost, #FF9052">snapchat</option>
                               </select>
                               </div>
                               
@@ -138,7 +138,7 @@
                                 <div class="input-group-append">
                                   <span class="input-group-text">Url</span>
                                 </div>
-                              <input type="text" name="url" id="url" class="form-control" value="{{$element['url']}}">
+                              <input type="text" name="url_red" id="url_red" class="form-control" value="{{$element['url']}}">
 
                               </div>
 
@@ -150,9 +150,10 @@
 
                         </div>
                         <hr class="pb-2">
-                        <div class="row">
-                        @php
+                        <div class="row listadoRed" >
                           
+                        @php
+                          echo "<input type='hidden' name='redes_sociales' value='".$element->redes_sociales."' id='listaRed'>";
                           $redes=json_decode($element->redes_sociales,true);
                           foreach ($redes as $key => $value) {
                             echo '<div class="col-lg-12">
@@ -166,7 +167,7 @@
                                       <input type="text" class="form-control" value="'.$value["url"].'">
                                       <div class="input-group-prepend">
                                         <div class="input-group-text" style="cursor:pointer">
-                                              <span class="bg-danger px-2 rounded-circle">&times;</span>
+                                              <span class="bg-danger px-2 rounded-circle eliminarRed" red="'.$value['icono'].'" url="'.$value['url'].'">&times;</span>
                                         </div>
 
                                       </div>
@@ -201,7 +202,8 @@
                                   <i class="fas fa-paperclip"></i>Adjuntar imagen de Logo
                                   <input type="file" name="logo" id="logo">
                                  </div>
-                                <img src="{{url('/')}}/{{$element->logo}}" class="img-fluid py-2 btn-secondary">
+                                 <br>
+                                <img src="{{url('/')}}/{{$element->logo}}" class="img-fluid py-2 btn-secondary previsualizarImg_logo">
                                 <p class="help-block small mt-3">Dimensiones : 700px * 200px | Peso Maximo 1mb | Formato JPG o PNG</p>
                               
                                </div>
@@ -211,7 +213,8 @@
                                  <i class="fas fa-paperclip"></i>Adjuntar imagen de Portada
                                  <input type="file" name="portada" id="portada">
                                 </div>
-                               <img src="{{url('/')}}/{{$element->portada}}" class="img-fluid py-2 btn-secondary">
+                                <br>
+                               <img src="{{url('/')}}/{{$element->portada}}" class="img-fluid py-2 btn-secondary previsualizarImg_portada">
                                <p class="help-block small mt-3">Dimensiones : 700px * 420px | Peso Maximo 1mb | Formato JPG o PNG</p>
 
                               </div>
@@ -223,7 +226,7 @@
                                  <input type="file" name="icono" id="icono">
                                 </div>
                                 <br>
-                               <img src="{{url('/')}}/{{$element->icono}}" class="img-fluid py-2 rounded-circle">
+                               <img src="{{url('/')}}/{{$element->icono}}" class="img-fluid py-2 rounded-circle previsualizarImg_icono">
                                <p class="help-block small mt-3">Dimensiones : 150px * 150px | Peso Maximo 1mb | Formato JPG o PNG</p>
 
                               </div>
